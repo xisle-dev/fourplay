@@ -10,6 +10,20 @@
     },
     "items": [
         {
+            "id": "https://xisle-dev.github.io/fourplay/great-gig-at-msg.html",
+            "url": "https://xisle-dev.github.io/fourplay/great-gig-at-msg.html",
+            "title": "Great Gig At MSG!",
+            "summary": "Nice to be at a small intimate venue for a change. Shout&hellip;",
+            "content_html": "<p>Nice to be at a small intimate venue for a change.  Shout out to Notorious RBG for hooking us up.<figure class=\"post__image\"><img loading=\"lazy\"  src=\"https://xisle-dev.github.io/fourplay/media/posts/5/DSCF5387.JPG\" alt=\"\" width=\"1536\" height=\"2048\" sizes=\"(max-width: 1024px) 100vw, 1024px\" srcset=\"https://xisle-dev.github.io/fourplay/media/posts/5/responsive/DSCF5387-xs.JPG 300w ,https://xisle-dev.github.io/fourplay/media/posts/5/responsive/DSCF5387-sm.JPG 480w ,https://xisle-dev.github.io/fourplay/media/posts/5/responsive/DSCF5387-md.JPG 768w ,https://xisle-dev.github.io/fourplay/media/posts/5/responsive/DSCF5387-lg.JPG 1024w\"></figure>",
+            "author": {
+                "name": "Garth Tissington"
+            },
+            "tags": [
+            ],
+            "date_published": "2026-06-21T19:45:33-07:00",
+            "date_modified": "2026-06-21T19:45:33-07:00"
+        },
+        {
             "id": "https://xisle-dev.github.io/fourplay/here-is-a-bio-for-each-member.html",
             "url": "https://xisle-dev.github.io/fourplay/here-is-a-bio-for-each-member.html",
             "title": "Here is a BIO for each Member",

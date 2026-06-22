@@ -3,12 +3,32 @@
     <title>Fore Play</title>
     <link href="https://xisle-dev.github.io/fourplay/feed.xml" rel="self" />
     <link href="https://xisle-dev.github.io/fourplay" />
-    <updated>2026-06-21T18:45:43-07:00</updated>
+    <updated>2026-06-21T19:45:33-07:00</updated>
     <author>
         <name>Garth Tissington</name>
     </author>
     <id>https://xisle-dev.github.io/fourplay</id>
 
+    <entry>
+        <title>Great Gig At MSG!</title>
+        <author>
+            <name>Garth Tissington</name>
+        </author>
+        <link href="https://xisle-dev.github.io/fourplay/great-gig-at-msg.html"/>
+        <id>https://xisle-dev.github.io/fourplay/great-gig-at-msg.html</id>
+
+        <updated>2026-06-21T19:45:33-07:00</updated>
+            <summary type="html">
+                <![CDATA[
+                    Nice to be at a small intimate venue for a change. Shout&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>Nice to be at a small intimate venue for a change.  Shout out to Notorious RBG for hooking us up.<figure class="post__image"><img loading="lazy"  src="https://xisle-dev.github.io/fourplay/media/posts/5/DSCF5387.JPG" alt="" width="1536" height="2048" sizes="(max-width: 1024px) 100vw, 1024px" srcset="https://xisle-dev.github.io/fourplay/media/posts/5/responsive/DSCF5387-xs.JPG 300w ,https://xisle-dev.github.io/fourplay/media/posts/5/responsive/DSCF5387-sm.JPG 480w ,https://xisle-dev.github.io/fourplay/media/posts/5/responsive/DSCF5387-md.JPG 768w ,https://xisle-dev.github.io/fourplay/media/posts/5/responsive/DSCF5387-lg.JPG 1024w"></figure>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Here is a BIO for each Member</title>
         <author>
