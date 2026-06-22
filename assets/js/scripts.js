@@ -1,28 +1,37 @@
-// Sticky header position on page scrolling up
-const header = document.querySelector('.js-header');
-const stickyClass = 'sticky';
-let lastScrollTop = 0;
-let isWaiting = false;
+// Sticky menu
+let newScrollPosition = 0;
+let lastScrollPosition;
+const header = document.getElementById("js-header");
+const stickyMenu = document.getElementById("js-navbar-menu");
 
 window.addEventListener('scroll', () => {
-    if (!isWaiting) {
-        window.requestAnimationFrame(() => {
-            let currentScroll = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+    lastScrollPosition = window.scrollY;
 
-            if (currentScroll > lastScrollTop) {
-                header.classList.remove(stickyClass);
-            } else if (currentScroll < lastScrollTop && currentScroll > 0) {
-                header.classList.add(stickyClass);
-            } else if (currentScroll <= 0) {
-                header.classList.remove(stickyClass);
-            }
+    // Scrolling down
+    if (newScrollPosition < lastScrollPosition && lastScrollPosition > 90) {
+        header.classList.remove("is-visible");
+        header.classList.add("is-hidden");
 
-            lastScrollTop = currentScroll;
-            isWaiting = false;
-        });
-        isWaiting = true;
+        // Scrolling up
+    } else if (newScrollPosition > lastScrollPosition && lastScrollPosition > 89) {
+        header.classList.remove("is-hidden");
+        header.classList.add("is-visible");
+        if (stickyMenu) {
+            stickyMenu.classList.add("is-sticky");
+        }
     }
-}, false);
+
+    if (lastScrollPosition < 1) {
+        header.classList.remove("is-visible");
+
+        if (stickyMenu) {
+            stickyMenu.classList.remove("is-sticky");
+        }
+    }
+
+    newScrollPosition = lastScrollPosition;
+});
+
 
 // Dropdown menu
 (function (menuConfig) {
@@ -636,35 +645,6 @@ function initSubmenuPositions() {
   init();
 })(window.publiiThemeMenuConfig);
 
-// Load search input area
-const searchButton = document.querySelector('.js-search-btn');
-const searchOverlay = document.querySelector('.js-search-overlay');
-
-if (searchButton && searchOverlay) {
-    searchButton.addEventListener('click', (event) => {
-        event.stopPropagation();
-        searchOverlay.classList.toggle('expanded');
-
-        if (searchOverlay.classList.contains('expanded')) {
-            setTimeout(() => {
-                const element = searchOverlay.querySelector('input, button');
-                if (element) {
-                    element.focus();
-                }
-            }, 60);
-        }
-    });
-
-    searchOverlay.addEventListener('click', (event) => {
-        event.stopPropagation();
-    });
-
-    document.body.addEventListener('click', () => {
-        searchOverlay.classList.remove('expanded');
-    });
-}
-
-
 // Share buttons pop-up
 (function () {
     // share popup
@@ -737,68 +717,71 @@ if (searchButton && searchOverlay) {
     }
 })();
 
-// Back to top
-document.addEventListener('DOMContentLoaded', () => {
-    const backToTopButton = document.getElementById('backToTop');
+// Load search input area
+const searchButton = document.querySelector('.js-search-btn');
+const searchOverlay = document.querySelector('.js-search-overlay');
+const searchInput = document.querySelector('[type="search"]');
 
-    if (backToTopButton) {
-        const backToTopScrollFunction = () => {
-            if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
-                backToTopButton.classList.add('is-visible');
-            } else {
-                backToTopButton.classList.remove('is-visible');
-            }
-        };
+if (searchButton) {
+    searchButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        searchOverlay.classList.toggle('expanded');
 
-        const backToTopFunction = () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        };
+        if (searchInput) {
+            setTimeout(() => {
+                if (searchOverlay.classList.contains('expanded')) {
+                    searchInput.focus();
+                }
+            }, 60);
+        }
+    });
 
-        window.addEventListener('scroll', backToTopScrollFunction);
-        backToTopButton.addEventListener('click', backToTopFunction);
-    }
-});
+    searchOverlay.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+
+    document.body.addEventListener('click', () => {
+        searchOverlay.classList.remove('expanded');
+    });
+}
 
 
 // Responsive embeds script
 (function () {
-    let wrappers = document.querySelectorAll('.post__video, .post__iframe');
+	let wrappers = document.querySelectorAll('.post__video, .post__iframe');
 
-    for (let i = 0; i < wrappers.length; i++) {
-        let embed = wrappers[i].querySelector('iframe, embed, video, object');
+	for (let i = 0; i < wrappers.length; i++) {
+		let embed = wrappers[i].querySelector('iframe, embed, video, object');
 
-        if (!embed) {
-            continue;
-        }
+		if (!embed) {
+			continue;
+		}
 
         if (embed.getAttribute('data-responsive') === 'false') {
             continue;
         }
 
-        let w = embed.getAttribute('width');
-        let h = embed.getAttribute('height');
-        let ratio = false;
+		let w = embed.getAttribute('width');
+		let h = embed.getAttribute('height');
+		let ratio = false;
 
-        if (!w || !h) {
-            continue;
-        }
+		if (!w || !h) {
+			continue;
+		}
+		
+		if (w.indexOf('%') > -1 && h.indexOf('%') > -1) { // percentage mode
+			w = parseFloat(w.replace('%', ''));
+			h = parseFloat(h.replace('%', ''));
+			ratio = h / w;
+		} else if (w.indexOf('%') === -1 && h.indexOf('%') === -1) { // pixels mode
+			w = parseInt(w, 10);
+			h = parseInt(h, 10);
+			ratio = h / w;
+		}
 
-        if (w.indexOf('%') > -1 && h.indexOf('%') > -1) { // percentage mode
-            w = parseFloat(w.replace('%', ''));
-            h = parseFloat(h.replace('%', ''));
-            ratio = h / w;
-        } else if (w.indexOf('%') === -1 && h.indexOf('%') === -1) { // pixels mode
-            w = parseInt(w, 10);
-            h = parseInt(h, 10);
-            ratio = h / w;
-        }
-
-        if (ratio !== false) {
-            let ratioValue = (ratio * 100) + '%';
-            wrappers[i].setAttribute('style', '--embed-aspect-ratio:' + ratioValue);
-        }
-    }
+		if (ratio !== false) {
+			let ratioValue = (ratio * 100) + '%';
+			wrappers[i].setAttribute('style', '--embed-aspect-ratio:' + ratioValue);
+		}
+	}
 })();
