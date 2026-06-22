@@ -1,0 +1,27 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Fore Play",
+    "description": "",
+    "home_page_url": "https://xisle-dev.github.io/fourplay",
+    "feed_url": "https://xisle-dev.github.io/fourplay/feed.json",
+    "user_comment": "",
+    "author": {
+        "name": "Garth Tissington"
+    },
+    "items": [
+        {
+            "id": "https://xisle-dev.github.io/fourplay/here-is-a-bio-for-each-member.html",
+            "url": "https://xisle-dev.github.io/fourplay/here-is-a-bio-for-each-member.html",
+            "title": "Here is a BIO for each Member",
+            "summary": "Lynn, Ed, Jane, Mary",
+            "content_html": "<p>Lynn, Ed, Jane, Mary</p>",
+            "author": {
+                "name": "Garth Tissington"
+            },
+            "tags": [
+            ],
+            "date_published": "2026-06-21T18:45:43-07:00",
+            "date_modified": "2026-06-21T18:45:43-07:00"
+        }
+    ]
+}

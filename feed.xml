@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+    <title>Fore Play</title>
+    <link href="https://xisle-dev.github.io/fourplay/feed.xml" rel="self" />
+    <link href="https://xisle-dev.github.io/fourplay" />
+    <updated>2026-06-21T18:45:43-07:00</updated>
+    <author>
+        <name>Garth Tissington</name>
+    </author>
+    <id>https://xisle-dev.github.io/fourplay</id>
+
+    <entry>
+        <title>Here is a BIO for each Member</title>
+        <author>
+            <name>Garth Tissington</name>
+        </author>
+        <link href="https://xisle-dev.github.io/fourplay/here-is-a-bio-for-each-member.html"/>
+        <id>https://xisle-dev.github.io/fourplay/here-is-a-bio-for-each-member.html</id>
+
+        <updated>2026-06-21T18:45:43-07:00</updated>
+            <summary type="html">
+                <![CDATA[
+                    Lynn, Ed, Jane, Mary
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>Lynn, Ed, Jane, Mary</p>
+            ]]>
+        </content>
+    </entry>
+</feed>
