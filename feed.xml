@@ -3,7 +3,7 @@
     <title>Fore Play</title>
     <link href="https://xisle-dev.github.io/fourplay/feed.xml" rel="self" />
     <link href="https://xisle-dev.github.io/fourplay" />
-    <updated>2026-06-21T20:20:56-07:00</updated>
+    <updated>2026-06-21T20:22:31-07:00</updated>
     <author>
         <name>Garth Tissington</name>
     </author>
@@ -16,11 +16,13 @@
         </author>
         <link href="https://xisle-dev.github.io/fourplay/news/sadfsadf/"/>
         <id>https://xisle-dev.github.io/fourplay/news/sadfsadf/</id>
+        <media:content url="https://xisle-dev.github.io/fourplay/media/posts/6/PICT0491.JPG" medium="image" />
 
         <updated>2026-06-21T20:18:49-07:00</updated>
             <summary></summary>
         <content type="html">
             <![CDATA[
+                    <p><img src="https://xisle-dev.github.io/fourplay/media/posts/6/PICT0491.JPG" class="type:primaryImage" alt="" /></p>
                 
 <table style="border-collapse: collapse; width: 100%; height: 385.834px;" border="1">
 <tbody>
